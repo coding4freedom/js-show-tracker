@@ -1,0 +1,17 @@
+
+.theme {
+    display: flex;
+    justify-content: end;
+    height: 35px;
+    border: 2px solid #213547;
+    border-radius: 35px;    
+    width: 60px;
+}
+
+.theme-btn {  
+    height: 32px;
+    width: 32px;
+    padding: 0;  
+    border-radius: 50%;    
+    background-color: #213547;
+}
