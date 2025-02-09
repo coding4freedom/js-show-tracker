@@ -8,11 +8,11 @@ function App() {
   
 
   return (
-    <>
+    <div className='main'>
       <Theme />
       <h1>Show Tracker</h1>
       <PlusTile />
-    </>
+    </div>
   )
 };
 

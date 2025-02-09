@@ -6,6 +6,9 @@
     border: 2px solid #213547;
     border-radius: 35px;    
     width: 60px;
+    position: fixed;
+    top: 30px;
+    right: 50px;
 }
 
 .theme-btn {  
