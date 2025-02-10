@@ -9,3 +9,47 @@
     font-size: 1.8rem;
     border: 3px solid #213547;    
 }
+
+/* Modal Section */
+
+.modal {
+    position: absolute;
+    top: -50%;
+    height: 450px;
+    width: 350px;
+    background-color: #242424;;
+    border: 8px solid #646cff;
+    border-radius: 4px;
+}
+
+.modal-content {
+    position: relative;
+}
+
+.modal-title {
+    padding: 1rem;
+}
+
+.modal-btn--group {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.modal-btn {
+    padding: 5px 10px;
+    background-color: #646cff;
+}
+
+.modal-btn:hover {
+    border-color: white;
+}
+
+.close-modal {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    width: 30px;
+    height: 30px;    
+    padding: 0;
+}

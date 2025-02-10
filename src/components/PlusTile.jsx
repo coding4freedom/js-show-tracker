@@ -33,8 +33,12 @@ const PlusTile = () => {
                                 <button className="modal-btn">Movies</button>
                                 <button className="modal-btn">Anime</button>
                             </div>
+                            <div className="modal-genre-group">
+                                
+                            </div>
                         </div>
-                    </div>
+                        <button className="close-modal">X</button>
+                    </div>                    
                 </div>
             )}
         </div>
