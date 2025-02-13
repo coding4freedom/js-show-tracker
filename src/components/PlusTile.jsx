@@ -1,10 +1,12 @@
 
 import React, { useState } from "react";
-
+import genres from "../data/genreData";
 import '../components/PlusTile.css';
+import GenreList from "./GenreList";
 
 const PlusTile = () => {
     const [ modal, setModal ] = useState(true);
+    const [ selectedId, setSelectedId] = useState(null);
 
     const toggleModal = () => {
         setModal(!modal);
@@ -16,6 +18,7 @@ const PlusTile = () => {
         document.body.classList.remove('show-modal');
     }
 
+   
     return (
         <div className="plus">
             <button onClick={toggleModal} className="plus-btn">
@@ -29,15 +32,15 @@ const PlusTile = () => {
                         <div className="modal-top--group">
                             <h2 className="modal-title">Select Type</h2>
                             <div className="modal-btn--group">
-                                <button className="modal-btn">TV</button>
-                                <button className="modal-btn">Movies</button>
-                                <button className="modal-btn">Anime</button>
+                                <button className="modal-btn" onClick={() => setSelectedId('tv')}>TV</button>
+                                <button className="modal-btn" onClick={() => setSelectedId('movies')}>Movies</button>
+                                <button className="modal-btn" onClick={() => setSelectedId('anime')}>Anime</button>
                             </div>
-                            <div className="modal-genre-group">
-                                
-                            </div>
+                            <ul className="modal-genre-group">
+                                {selectedId && <GenreList genres={genres} id={selectedId}/>}
+                            </ul>
                         </div>
-                        <button className="close-modal">X</button>
+                        <button className="close-modal" onClick={toggleModal}>X</button>
                     </div>                    
                 </div>
             )}

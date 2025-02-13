@@ -20,11 +20,13 @@
     background-color: #242424;;
     border: 8px solid #646cff;
     border-radius: 4px;
+    overflow: hidden;
 }
 
 .modal-content {
     position: relative;
 }
+
 
 .modal-title {
     padding: 1rem;
@@ -43,6 +45,15 @@
 
 .modal-btn:hover {
     border-color: white;
+}
+
+.modal-genre-group {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
 }
 
 .close-modal {

@@ -1,0 +1,13 @@
+
+.modal-genre-group li {
+    width: 225px;
+    height: 100%;
+    border: 2px solid white;
+    list-style: none;
+    margin-top: 1.5rem;
+}
+
+.genre-btn {
+    width: 100%;
+    color: #646cff;
+}

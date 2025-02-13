@@ -1,5 +1,5 @@
 
-const genre = [
+const genres = [
     {
         id: 'tv',
         genres: ['action', 'comedy', 'drama', 'sci-fi', 'horror', 'romance', 'fantasy', 'western'],
@@ -10,8 +10,8 @@ const genre = [
     },
     {
         id: 'anime',
-        genres: ['action', 'adventure', 'comedy', 'drama', 'ecchi', 'fantasy', 'horror', 'isekai', 'magic', 'mecha', 'mystery', 'romance', 'sci-fi', 'shounen', 'slice-of-life', 'sports', 'space', 'harem', 'music', 'game'],
+        genres: ['action', 'adventure', 'comedy', 'drama', 'ecchi', 'fantasy', 'horror', 'isekai', 'magic', 'mecha', 'mystery', 'romance', 'sci-fi', 'shonen', 'slice-of-life', 'sports', 'space', 'harem', 'music', 'game', 'thriller', 'shojo'],
     },
 ];
 
-export default genre;
+export default genres;
