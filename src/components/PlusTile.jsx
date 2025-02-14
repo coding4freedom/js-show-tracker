@@ -6,12 +6,17 @@ import GenreList from "./GenreList";
 
 const PlusTile = () => {
     const [ modal, setModal ] = useState(true);
-    const [ selectedId, setSelectedId] = useState(null);
-
+    const [ selectedId, setSelectedId ] = useState(null);
+    const [ selection, setSelection ] = useState(null);
+    
     const toggleModal = () => {
         setModal(!modal);
     };
+    const toggleGenre = (button) => {
+        setSelection((prev) => (prev === button ? null : button))
+    }
 
+   
     if (modal) {
         document.body.classList.add('show-modal');
     } else {
@@ -32,12 +37,18 @@ const PlusTile = () => {
                         <div className="modal-top--group">
                             <h2 className="modal-title">Select Type</h2>
                             <div className="modal-btn--group">
-                                <button className="modal-btn" onClick={() => setSelectedId('tv')}>TV</button>
-                                <button className="modal-btn" onClick={() => setSelectedId('movies')}>Movies</button>
-                                <button className="modal-btn" onClick={() => setSelectedId('anime')}>Anime</button>
+                                <button className="modal-btn" 
+                                    onClick={() => {setSelectedId('tv'); toggleGenre('tv');}}
+                                >TV</button>
+                                <button className="modal-btn" 
+                                    onClick={() => {setSelectedId('movies'); toggleGenre('movie')}}
+                                >Movies</button>
+                                <button className="modal-btn" 
+                                    onClick={() => {setSelectedId('anime'); toggleGenre('anime')}}
+                                >Anime</button>
                             </div>
                             <ul className="modal-genre-group">
-                                {selectedId && <GenreList genres={genres} id={selectedId}/>}
+                                {selectedId && selection && <GenreList genres={genres} id={selectedId}/>}
                             </ul>
                         </div>
                         <button className="close-modal" onClick={toggleModal}>X</button>
