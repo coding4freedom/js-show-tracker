@@ -1,5 +1,5 @@
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import genres from "../data/genreData";
 import '../components/PlusTile.css';
 import GenreList from "./GenreList";
@@ -16,12 +16,16 @@ const PlusTile = () => {
         setSelection((prev) => (prev === button ? null : button))
     }
 
+    useEffect(() => {
+        if (modal) {
+            document.body.classList.add('show-modal');
+        } else {
+            document.body.classList.remove('show-modal');
+            setSelection('');
+        }
+
+    }, [modal]);
    
-    if (modal) {
-        document.body.classList.add('show-modal');
-    } else {
-        document.body.classList.remove('show-modal');
-    }
 
    
     return (

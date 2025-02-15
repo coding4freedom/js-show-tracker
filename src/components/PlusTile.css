@@ -48,12 +48,13 @@
 }
 
 .modal-genre-group {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    overflow-y: scroll;
-    scroll-behavior: smooth;
+    
+    flex-grow: 1;
+    max-height: 325px;    
+    margin-left: 50px;
+    margin-bottom: 0; 
+    padding-bottom: 0;  
+    overflow-y: auto;
 }
 
 .close-modal {
@@ -63,4 +64,5 @@
     width: 30px;
     height: 30px;    
     padding: 0;
+    color: #646cff;
 }
