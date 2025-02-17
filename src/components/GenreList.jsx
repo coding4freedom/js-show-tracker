@@ -10,7 +10,7 @@ const GenreList = ({genres, id}) => {
         <>
             {selectedGenres.map((genreName) => (
                 <li key={genreName}>
-                    <button className="genre-btn">{genreName}</button>
+                    <button className="genre-btn" onClick={something}>{genreName}</button>
                 </li>
             ))}
         </>

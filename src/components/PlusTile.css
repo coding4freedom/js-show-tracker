@@ -47,11 +47,9 @@
     border-color: white;
 }
 
-.modal-genre-group {
-    
+.modal-genre-group {    
     flex-grow: 1;
     max-height: 325px;    
-    margin-left: 50px;
     margin-bottom: 0; 
     padding-bottom: 0;  
     overflow-y: auto;
