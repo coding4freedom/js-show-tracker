@@ -1,0 +1,12 @@
+
+.nav-bar span {
+    position: fixed;
+    top: 27px;
+    right: 160px;
+    font-size: 1.5rem;
+    color: #fff;
+}
+
+.nav-bar span:hover {
+    color: #535bf2;
+}

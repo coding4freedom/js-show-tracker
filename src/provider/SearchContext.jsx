@@ -1,4 +1,4 @@
-import React, {createContext, useContext, useState, useEffect, Children} from "react";
+import React, {createContext, useContext, useState, useEffect, children} from "react";
 
 const SearchContext = createContext();
 

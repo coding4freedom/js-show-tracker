@@ -3,7 +3,7 @@
     display: flex;
     justify-content: end;
     height: 35px;
-    border: 2px solid #213547;
+    border: 2px solid #535bf2;;
     border-radius: 35px;    
     width: 60px;
     position: fixed;
@@ -16,5 +16,5 @@
     width: 32px;
     padding: 0;  
     border-radius: 50%;    
-    background-color: #213547;
+    background-color: #535bf2;
 }
