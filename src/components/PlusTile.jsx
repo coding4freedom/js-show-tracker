@@ -1,31 +1,26 @@
 
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
+import { useSearch } from "../provider/SearchContext";
 import genres from "../data/genreData";
-import '../components/PlusTile.css';
 import GenreList from "./GenreList";
+import '../components/PlusTile.css';
 
-const PlusTile = () => {
-    const [ modal, setModal ] = useState(true);
+const PlusTile = () => {    
     const [ selectedId, setSelectedId ] = useState(null);
-    const [ selection, setSelection ] = useState(null);
+    
+    const {
+        modal,
+        setModal,
+        selection, 
+        setSelection
+    } = useSearch();
     
     const toggleModal = () => {
         setModal(!modal);
     };
     const toggleGenre = (button) => {
         setSelection((prev) => (prev === button ? null : button))
-    }
-
-    useEffect(() => {
-        if (modal) {
-            document.body.classList.add('show-modal');
-        } else {
-            document.body.classList.remove('show-modal');
-            setSelection('');
-        }
-
-    }, [modal]);
-   
+    }  
 
    
     return (
@@ -52,7 +47,7 @@ const PlusTile = () => {
                                 >Anime</button>
                             </div>
                             <ul className="modal-genre-group">
-                                {selectedId && selection && <GenreList genres={genres} id={selectedId}/>}
+                                {selectedId && selection && <GenreList genres={genres} id={selectedId} toggle={toggleModal} />}
                             </ul>
                         </div>
                         <button className="close-modal" onClick={toggleModal}>X</button>

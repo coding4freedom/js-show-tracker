@@ -1,16 +1,18 @@
 
-const genreGroup = document.querySelector('.modal-genre-group');
+import { Link } from "react-router-dom";
 import "../components/GenreList.css"
 
 
-const GenreList = ({genres, id}) => {
+const GenreList = ({genres, id, toggle}) => {    
 
     const selectedGenres = genres.find(genre => genre.id === id)?.genres || [];
     return (
         <>
             {selectedGenres.map((genreName) => (
                 <li key={genreName}>
-                    <button className="genre-btn" onClick={something}>{genreName}</button>
+                    <Link to="/episode" >
+                        <button className="genre-btn" onClick={toggle} >{genreName}</button>
+                    </Link>
                 </li>
             ))}
         </>
