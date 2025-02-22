@@ -1,4 +1,4 @@
-import React, {createContext, useContext, useState, useEffect, children} from "react";
+import React, { createContext, useContext, useState, useEffect } from "react";
 
 const SearchContext = createContext();
 
@@ -9,8 +9,9 @@ export const useSearch = () => {
 export const SearchProvider = ({ children }) => {
     const [ modal, setModal ] = useState(false);
     const [ selection, setSelection ] = useState(null);
+    const [ trackerForm, setTrackerForm ] = useState([]);
     
-
+    // Modal use effect logic
     useEffect(() => {
         if (modal) {
             document.body.classList.add('show-modal');
@@ -21,8 +22,17 @@ export const SearchProvider = ({ children }) => {
 
     }, [modal]);
 
+    // function to add new tracker form entries
+    const saveTrackerForm = (newTrackerForm) => {
+        setTrackerForm((prevEntries) => [
+            ...prevEntries,
+            { ...trackerForm, id: Date.now() }
+        ]);
+    };
+
     return (
-        <SearchContext.Provider value={{ modal, setModal, selection, setSelection }} >
+        <SearchContext.Provider 
+            value={{ modal, setModal, selection, setSelection, trackerForm,     saveTrackerForm }} >
             { children }
         </SearchContext.Provider>
     )
