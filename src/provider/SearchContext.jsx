@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState, useEffect } from "react";
+import { createContext, useContext, useState, useEffect } from "react";
 
 const SearchContext = createContext();
 
@@ -32,7 +32,7 @@ export const SearchProvider = ({ children }) => {
 
     return (
         <SearchContext.Provider 
-            value={{ modal, setModal, selection, setSelection, trackerForm,     saveTrackerForm }} >
+            value={{ modal, setModal, selection, setSelection, trackerForm, saveTrackerForm }} >
             { children }
         </SearchContext.Provider>
     )

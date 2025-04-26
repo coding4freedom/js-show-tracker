@@ -10,8 +10,10 @@ const GenreList = ({genres, id, toggle}) => {
         <>
             {selectedGenres.map((genreName) => (
                 <li key={genreName}>
-                    <Link to="/episode" >
-                        <button className="genre-btn" onClick={toggle} >{genreName}</button>
+                    <Link to="/episode" state={{ category: id, genre: genreName}}>
+                        <button className="genre-btn" onClick={toggle} >
+                            {genreName}
+                        </button>
                     </Link>
                 </li>
             ))}

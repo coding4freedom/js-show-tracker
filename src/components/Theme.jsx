@@ -1,6 +1,3 @@
-
-import React from 'react';
-
 import '../components/Theme.css';
 
 const Theme = () => {

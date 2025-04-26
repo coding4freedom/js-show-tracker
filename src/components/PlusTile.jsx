@@ -1,5 +1,5 @@
 
-import React, { useState } from "react";
+import { useState } from "react";
 import { useSearch } from "../provider/SearchContext";
 import genres from "../data/genreData";
 import GenreList from "./GenreList";

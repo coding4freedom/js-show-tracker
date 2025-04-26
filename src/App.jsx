@@ -1,10 +1,9 @@
 
-import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { SearchProvider } from './provider/SearchContext';
 import Home from './page/HomePage';
 import NavBar from './components/NavBar';
-import Episode from './page/EpisodePage';
+import EpisodeForm from './page/EpisodeForm';
 
 import './App.css';
 
@@ -19,7 +18,7 @@ function App() {
           <NavBar />
           <Routes>
             <Route path="/" element={ <Home />} />
-            <Route path="/episode" element={<Episode />} />
+            <Route path="/episode" element={<EpisodeForm />} />
           </Routes>        
         </div>
       </Router>
