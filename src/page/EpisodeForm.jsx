@@ -70,7 +70,7 @@ const EpisodeForm = () => {
     } = useForm({
         defaultValues,
         resolver: yupResolver(validationSchema),
-    })
+    });
 
     const selectedStatus = watch("status");
 
@@ -87,7 +87,82 @@ const EpisodeForm = () => {
         : "Show title";
         
     return (
-        <>Episode</>
+        <div className="episode-form-container">
+            <h2>Add {titleLabel} Detail</h2>
+            <form onSubmit={handleSubmit(onSubmit)} className="episode-form">
+                <div className="form-group">
+                    <label htmlFor="name">{titleLabel}:</label>
+                    <input 
+                        id="name"
+                        type="text"
+                        placeholder={`Enter ${titleLabel}`}
+                        {...register("name")} 
+                    />
+                    {errors.name && <p className="error">{errors.genre.message}</p>}
+                </div>
+
+                <div className="form-group">
+                    <label htmlFor="notes">Notes:</label>
+                    <textarea 
+                        id="notes"
+                        placeholder="Enter your notes here"
+                        {...register("notes")}
+                    />
+                    {errors.notes && <p className="error">{errors.notes.message}</p> }
+                </div>
+
+                {(category === "tv" || category === "anime") && (
+                    <>
+                        <div className="form-group">
+                            <label htmlFor="platform">Platform:</label>
+                            <input 
+                                id="platform"
+                                type="text"
+                                placeholder="Enter platform" 
+                                {...register("platform")}
+                            />
+                            {errors.lastEpisode && <p className="error">{errors.lastEpisode.message}</p> }                            
+                        </div>
+                    </>
+                )}
+
+                {(category === "movie" || category === "movies") && (
+                    <>
+                        <div className="form-group">
+                            <label>Status:</label>
+                            <div className="radio-group">
+                                <label>
+                                    <input type="radio" value="will watch" {...register("status")} />
+                                    Will Watch
+                                </label>
+                                <label>
+                                    <input type="radio" value="watched" {...register("status")} />
+                                    Watched
+                                </label>
+                                <label>
+                                    <input type="radio" value="partial" {...register("status")} />
+                                    Partial
+                                </label>
+                            </div>
+                            {errors.status && <p className="error">{errors.status.message}</p>}
+                        </div>
+                        {selectedStatus === "partial" && (
+                            <div className="form-group">
+                                <label htmlFor="timestamp">Timestamp:</label>
+                                <input 
+                                    id="timestamp"
+                                    type="text"
+                                    placeholder="Enter timestamp (e.g., 01:45:30)"
+                                    {...register('timestamp')}
+                                />
+                                {errors.timestamp && <p className="error">{errors.timestamp.message}</p> }
+                            </div>
+                        )}
+                    </>
+                )}
+                <button type="submit">Submit</button>
+            </form>
+        </div>
     )
 }
 
